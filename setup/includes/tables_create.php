@@ -110,6 +110,7 @@ if ($connected) {
     $modx->loadClass('modPrincipal');
     $modx->loadClass('modUser');
     foreach ($classes as $class) {
+
         if (!$dbcreated= $modx->manager->createObjectContainer($class)) {
             $results[]= array ('class' => 'failed', 'msg' => '<p class="notok">' . $install->lexicon('table_err_create',array('class' => $class)) . '</p>');
         } else {

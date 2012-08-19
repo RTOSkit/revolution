@@ -619,7 +619,7 @@ class modInstall {
         $this->loadSettings();
 
         /* db specific driver */
-        $class = 'drivers.modInstallDriver_'.strtolower($this->settings->get('database_type','mysql'));
+        $class = 'drivers.modInstallDriver_'.strtolower($this->settings->get('database_type','sqlite'));
         $className = $this->loadClass($class,$path);
         if (!empty($className)) {
             $this->driver = new $className($this);

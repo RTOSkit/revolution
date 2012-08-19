@@ -109,7 +109,7 @@ class xPDOGenerator_sqlite extends xPDOGenerator {
                 $Default= $this->getDefault($dflt_value);
                 $Extra= '';
                 if (!empty($pk)) {
-                    if (preg_match('/INT/i', $type)) {
+                    if (preg_match('/INTEGER/i', $type)) {
                         if ($baseClass === 'xPDOObject' && $Field === 'id') {
                             $extends= 'xPDOSimpleObject';
                             continue;

@@ -16,6 +16,7 @@
     <select id="database-type" value="{$config.database_type}" name="database_type">
         <option value="mysql"{if $config.database_type EQ "mysql"} selected="selected"{/if}>mysql</option>
         <option value="sqlsrv"{if $config.database_type EQ "sqlsrv"} selected="selected"{/if}>sqlsrv</option>
+        <option value="sqlite"{if $config.database_type EQ "sqlite"} selected="selected"{/if}>sqlite</option>
     </select>
     &nbsp;<span class="version-msg" id="database-type-error"></span>
 </div>

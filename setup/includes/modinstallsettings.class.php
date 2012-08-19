@@ -37,6 +37,11 @@ class modInstallSettings {
                     $database_dsn = "{$this->settings['database_type']}:host={$this->settings['database_server']};dbname={$this->settings['dbase']};charset={$this->settings['database_connection_charset']}";
                     $server_dsn = "{$this->settings['database_type']}:host={$this->settings['database_server']};charset={$this->settings['database_connection_charset']}";
                     break;
+                case 'sqlite':                   
+                    $ihnPath = (($ihnPath=$this->settings['database_server'])!='')? $ihnPath : MODX_CORE_PATH .'data/';                                                               
+                    $database_dsn = "{$this->settings['database_type']}:{$ihnPath}{$this->settings['dbase']}.db3";
+                    $server_dsn = "{$this->settings['database_type']}:charset={$this->settings['database_connection_charset']}"; /*NOT IMPLEMENT*/                   
+                    break;                
                 default:
                     $database_dsn = '';
                     $server_dsn = '';
