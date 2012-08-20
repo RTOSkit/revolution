@@ -38,3 +38,4 @@ setup/config.new.xml
 setup/config.upgrade.xml
 setup/config.upgrade-advanced.xml
 /core/data/modx.db3
+/core/cache/
