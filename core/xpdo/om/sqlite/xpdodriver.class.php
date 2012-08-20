@@ -61,7 +61,7 @@ class xPDODriver_sqlite extends xPDODriver {
      */
     function __construct(xPDO &$xpdo) {
         parent :: __construct($xpdo);
-        $this->dbtypes['integer']= array('/INT/i');
+        $this->dbtypes['integer']= array('/INTEGER/i');
         $this->dbtypes['string']= array('/CHAR/i','/CLOB/i','/TEXT/i', '/ENUM/i');
         $this->dbtypes['float']= array('/REAL/i','/FLOA/i','/DOUB/i');
         $this->dbtypes['datetime']= array('/TIMESTAMP/i','/DATE/i');

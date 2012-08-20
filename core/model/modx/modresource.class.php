@@ -191,7 +191,7 @@ class modResource extends modAccessibleSimpleObject implements modResourceInterf
         ));
         $result['total'] = $resource->xpdo->getCount('modResourceGroup',$c);
         $c->select($resource->xpdo->getSelectColumns('modResourceGroup', 'modResourceGroup'));
-        $c->select(array("IF(ISNULL(ResourceGroupResource.document),0,1) AS access"));
+        $c->select(array("CASE WHEN ISNULL(ResourceGroupResource.document) THEN 0 ELSE 1 END AS access"));
         foreach ($sort as $sortKey => $sortDir) {
             $c->sortby($resource->xpdo->escape('modResourceGroup') . '.' . $resource->xpdo->escape($sortKey), $sortDir);
         }
@@ -218,7 +218,7 @@ class modResource extends modAccessibleSimpleObject implements modResourceInterf
             ));
         } else {
             $c->select(array(
-                'IF(ISNULL(tvc.value),modTemplateVar.default_text,tvc.value) AS value',
+                'CASE WHEN ISNULL(tvc.value) THEN modTemplateVar.default_text ELSE tvc.value END AS value',
                 $resource->get('id').' AS resourceId'
             ));
         }

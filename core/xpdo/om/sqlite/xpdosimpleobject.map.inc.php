@@ -36,7 +36,7 @@ $xpdo_meta_map = array (
         ),
         'fieldMeta' => array (
             'id' => array(
-                'dbtype' => 'INTEGER',
+                'dbtype' => 'integer',
                 'phptype' => 'integer',
                 'null' => false,
                 'index' => 'pk',
