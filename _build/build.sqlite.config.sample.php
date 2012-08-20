@@ -3,6 +3,7 @@
 define('MODX_CORE_PATH', dirname(dirname(__FILE__)) . '/core/');
 define('MODX_CONFIG_KEY', 'config');
 
+
 /* define the connection variables */
 define('XPDO_DSN', 'sqlite:/core/data/modx.db3');
 define('XPDO_DB_USER', ''); /*NEXT DRIVER*/
